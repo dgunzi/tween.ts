@@ -6,19 +6,20 @@ var rename = require('gulp-rename');
 var htmlreplace = require('gulp-html-replace');
 var concat = require('gulp-concat');
 var insert = require('gulp-insert');
+var typescript = require('gulp-typescript');
 
 var metadata = require('./package');
 var header = '// ' + metadata.name + ' v' + metadata.version + ' ' + metadata.homepage + '\n';
 
 gulp.task('lint', function() {
-	return gulp.src('src/Tween.js')
+	return gulp.src('build/Tween.js')
 	.pipe(jshint())
 	.pipe(jshint.reporter('default'));
 });
 
 gulp.task('min', function() {
 	return gulp.src([
-		'src/Tween.js'
+		'build/Tween.js'
 	])
 	.pipe(uglify())
 	.pipe(insert.prepend(header))
@@ -27,7 +28,13 @@ gulp.task('min', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch('src/*.js', ['lint', 'min']);
+	gulp.watch('src/*.ts', ['build', 'lint', 'min']);
 });
 
-gulp.task('default', ['lint', 'min', 'watch']);
+gulp.task('build', function () {
+    return gulp.src('src/Tween.ts')
+    .pipe(typescript())
+    .pipe(gulp.dest('build'));
+});
+
+gulp.task('default', ['build', 'lint', 'min', 'watch']);
