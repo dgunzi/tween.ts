@@ -6,7 +6,8 @@ var rename = require('gulp-rename');
 var htmlreplace = require('gulp-html-replace');
 var concat = require('gulp-concat');
 var insert = require('gulp-insert');
-var typescript = require('gulp-typescript');
+var tsc = require('gulp-typescript-compiler');
+var browserify = require('gulp-browserify');
 
 var metadata = require('./package');
 var header = '// ' + metadata.name + ' v' + metadata.version + ' ' + metadata.homepage + '\n';
@@ -32,9 +33,21 @@ gulp.task('watch', function() {
 });
 
 gulp.task('build', function () {
-    return gulp.src('src/Tween.ts')
-    .pipe(typescript())
+    return gulp.src(['src/*.ts', '!src/*.d.ts'])
+    .pipe(tsc({
+            module : 'amd',
+            target: 'ES3',
+            sourcemap: false,
+            logErrors: true
+        }))
     .pipe(gulp.dest('build'));
 });
 
-gulp.task('default', ['build', 'lint', 'min', 'watch']);
+gulp.task('browserify', function() {
+    gulp.src('./build/Tween.js')
+        .pipe(browserify({
+        }))
+        .pipe(gulp.dest('./build/'))
+});
+
+gulp.task('default', ['build', 'lint', 'browserify', 'min']);
