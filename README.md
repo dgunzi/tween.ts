@@ -12,6 +12,10 @@ Uses browserify with a deamdify transformer to build tween.min.js which can be i
 
 (See examples)
 
+## installation
+
+`bower install tween.ts`
+
 ## notes
 
 If you get this error when compiling:
