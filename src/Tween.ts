@@ -1,5 +1,7 @@
 /// <reference path="./Tween.d.ts" />
 
+window.TWEEN = this;
+
 export var _tweens: Tween[] = [];
 
 export var REVISION = '14';
@@ -522,7 +524,7 @@ export var Interpolation: TweenInterpolation = {
     },
 
     CatmullRom: function ( v, k ) {
-        var m = v.length - 1, f = m * k, i = Math.floor( f ), fn = this.Utils.CatmullRom;
+        var m = v.length - 1, f = m * k, i = Math.floor( f ), fn = TWEEN.Interpolation.Utils.CatmullRom;
 
         if ( v[ 0 ] === v[ m ] ) {
             if ( k < 0 ) i = Math.floor( f = m * ( 1 + k ) );

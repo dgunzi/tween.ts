@@ -3,6 +3,10 @@
 // Definitions by: sunetos <https://github.com/sunetos>, jzarnikov <https://github.com/jzarnikov>
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
+interface Window{
+    TWEEN: any;
+}
+
 declare module TWEEN {
   export var REVISION: string;
   export function getAll(): Tween[];

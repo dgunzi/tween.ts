@@ -46,8 +46,9 @@ gulp.task('build', function () {
 gulp.task('browserify', function() {
     gulp.src('./build/Tween.js')
         .pipe(browserify({
+            transform: ['deamdify']
         }))
         .pipe(gulp.dest('./build/'))
 });
 
-gulp.task('default', ['build', 'lint', 'browserify', 'min']);
+gulp.task('default', ['build', 'lint', 'browserify', 'min'. 'watch']);
