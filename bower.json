@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "homepage": "https://github.com/edsilv/tween.ts",
   "authors": [
-    "edsilv <e.silverton@gmail.com>"
+    "edsilv <ed@edsilv.com>"
   ],
   "description": "TypeScript tweening engine",
   "main": "src/Tween.ts",
