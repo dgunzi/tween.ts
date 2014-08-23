@@ -2,7 +2,7 @@
 
 TypeScript version of http://github.com/sole/tween.js
 
-Enables use as AMD module in TypeScript:
+Enables use as an AMD module in TypeScript:
 
 `import Tween = require("./Tween");`
 
