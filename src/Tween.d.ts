@@ -100,5 +100,6 @@ interface TweenInterpolation {
     Linear(p0:number, p1:number, t:number): number;
     Bernstein(n:number, i:number): number;
     Factorial(n): number;
+    CatmullRom( p0, p1, p2, p3, t ): number;
   };
 }
