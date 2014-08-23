@@ -1,5 +1,8 @@
 /// <reference path="./Tween.d.ts" />
 
+// note: comment this line out if you get "'this' cannot be referenced within module bodies" when compiling.
+// it's purely for the js examples, not necessary for TypeScript apps.
+// http://typescript.codeplex.com/workitem/1951
 window.TWEEN = this;
 
 export var _tweens: Tween[] = [];
