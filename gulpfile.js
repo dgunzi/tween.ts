@@ -51,4 +51,4 @@ gulp.task('browserify', function() {
         .pipe(gulp.dest('./build/'))
 });
 
-gulp.task('default', ['build', 'lint', 'browserify', 'min'. 'watch']);
+gulp.task('default', ['build', 'lint', 'browserify', 'min', 'watch']);
