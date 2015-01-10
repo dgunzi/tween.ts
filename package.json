@@ -1,6 +1,6 @@
 {
   "name": "tween.ts",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Super simple, fast and easy to use tweening engine which incorporates optimised Robert Penner's equations.",
   "main": "src/Tween.ts",
   "homepage": "https://github.com/edsilv/tween.ts",
