@@ -6,6 +6,7 @@
     "type": "export",
     "exports": "Tween"
   },
+  "themes": "none",
   "typings": [
     "src/Tween.d.ts"
   ]
