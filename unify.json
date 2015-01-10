@@ -1,5 +1,5 @@
 {
-  "name": "tween.ts",
+  "name": "tween",
   "type": "lib",
   "dist": "build/tween.min",
   "library": {
