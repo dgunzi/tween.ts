@@ -4,7 +4,7 @@
   "dist": "build/tween.min",
   "library": {
     "type": "export",
-    "exports": "Tween"
+    "exports": "TWEEN"
   },
   "themes": "none",
   "typings": [
